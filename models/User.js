@@ -4,8 +4,6 @@ const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 const bcrypt = require('bcrypt');
 
-// class User extends Model {}
-
 // -- Create our User model
 class User extends Model {
   // set up method to run on instance data (per user) to check password
@@ -16,7 +14,6 @@ class User extends Model {
 
 User.init(
     {
-      // --first object defines the columns and data types for those columns
       // define an id column
       id: {
         type: DataTypes.INTEGER,  // use the special Sequelize DataTypes object provide what type of data it is
@@ -43,14 +40,11 @@ User.init(
         type: DataTypes.STRING,
         allowNull: false,
         validate: {
-          len: [4]  // this means the password must be at least four characters long
+          len: [8]  // this means the password must be at least four characters long
         }
       }
     }, // end of 1st object
     {
-      // -- The second object accepts configures for the table/model
-      // hooks property was added to the second object
-      // Version II :  async/await syntax -- one single variable that is input and output after the password hashing modification.
       hooks:{
         // to inject hasing logic to occur just before a user is created:
         async beforeCreate(newUserData) { // userData stores the pre-hash
@@ -59,15 +53,13 @@ User.init(
         }
       },
        
-      // TABLE CONFIGURATION OPTIONS GO HERE (https://sequelize.org/v5/manual/models-definition.html#configuration))
-      sequelize,  // pass in our imported sequelize connection (the direct connection to our database)
+      sequelize,   
       timestamps: false, // don't automatically create createdAt/updatedAt timestamp fields
       freezeTableName: true, // don't pluralize name of database table
-      underscored: true, // use underscores instead of camel-casing (i.e. `comment_text` and not `commentText`)
+      underscored: true, // use underscores instead of camel-casing  
       modelName: 'mod14user'  // make it so our model name stays lowercase in the database
 
     } // end of 2nd object
-      // https://sequelize.org/v5/manual/models-definition.html#configuration
 );
 
 module.exports = User;
