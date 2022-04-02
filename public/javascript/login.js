@@ -14,7 +14,11 @@ async function loginFormHandler(event) {
          headers: { 'Content-Type': 'application/json' }
       });
       if (response.ok) {
+         document.location.reload(true);
          document.location.replace('/');
+         document.location.replace('/dashboard');
+         document.location.replace('/');
+          
       } else {
          alert('Not Yet Registered or Failed to Log In. Please try again.');
       }

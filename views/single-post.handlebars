@@ -1,20 +1,21 @@
-<div class="card"> 
-  <div class="card_header">
-    <h5>Sign Up</h5> 
-  </div> 
-  <div class="card_body">
-   <form id="signup-form">
-      <label for="username-signup" class="form_label">Username:</label>
-      <input type="text" id="username-signup" class="form_input" autocomplete="off"/>
+{{> post-info post}} 
 
-      <label for="email-signup" class="form_label">Email:</label>
-      <input type="text" id="email-signup" class="form_input" autocomplete="off"/>
+{{> comments post.mod14comments}} 
 
-      <label for="password-signup" class="form_label">Password:</label>
-      <input type="password" id="password-signup" class="form_input" autocomplete="off"/>
+{{#if loggedIn}}
+<section class="card" id="new-post-form"  > 
+   <div class="card_header">
+      <h5>Add a Comment</h5> 
+   </div> 
+   <div class="card_body">
+      <form id="comment-form">
+         <textarea name="comment-body" class="form_textarea"></textarea>
+         <button type="submit" class="btn">+ Comment</button>
+      </form>  
+   </div>
+</section>
+{{/if}} 
 
-      <button type="submit" class="btn">Sign Up!</button> 
-   </form>       
-  </div>
-</div>
-<script src="/javascript/signup.js"></script>
+{{#if loggedIn}}
+<script src="/javascript/comment.js"></script>
+{{/if}}

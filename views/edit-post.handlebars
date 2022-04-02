@@ -1,0 +1,22 @@
+<section class="card" id="new-post-form"  > 
+  <div class="card_header">
+    <h5>Edit Post</h5> 
+  </div> 
+  <div class="card_body">
+    <form id="edit-post-form">
+        <label for="post-title" class="form_label">Title</label>
+        
+        <input type="text" name="post-title" value="{{post.title}}"  class="form_input"/>
+        
+        <label for="post-content"  class="form_label">Content</label>
+        <textarea id="post-content" name="post-content" class="form_textarea" autocomplete="off">{{post.post_content}}</textarea>
+        
+        <button type="submit" class="btn">Save post</button>
+        <button type="button" id="delete-post-btn" class="btn">Delete</button>
+        
+      </form>  
+  </div>
+</section>  
+
+<script src="/javascript/edit-post.js"></script>
+<script src="/javascript/delete-post.js"></script>

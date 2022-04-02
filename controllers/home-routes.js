@@ -66,22 +66,22 @@ router.get('/signup', (req, res) => {
   res.render('signup');
 }); 
 
-// // // -- Quick /post/:id Test Only
-// // router.get('/post/:id', (req, res) => {
-// //    const post = {
-// //      id: 1,
-// //      post_content: 'How Come It Does not Show Comments. Please Help Me Out',
-// //      title: 'Single Post Issue',
-// //      created_at: new Date(),
-// //     //  vote_count: 10,
-// //      comments: [{}, {}],
-// //      user: {
-// //        username: 'test_user'
-// //      }
-// //    };
-// //  
-// //    res.render('single-post', { post });
-// // });
+// // -- Quick /post/:id Test Only
+// router.get('/post/:id', (req, res) => {
+//    const post = {
+//      id: 1,
+//      post_content: 'We all encounters problems during the process of building something. How Come It Does not Show Comments. Please Help Me Out',
+//      title: 'Single Post Issue',
+//      created_at: new Date(),
+//     //  vote_count: 10,
+//      comments: [{}, {}],
+//      user: {
+//        username: 'test_user'
+//      }
+//    };
+//  
+//    res.render('single-post', { post });
+// });
 
 router.get('/post/:id', (req, res) => {
    Post.findOne({

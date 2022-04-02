@@ -1,0 +1,17 @@
+<div class="comments">
+   {{!-- Because arrays don't have named properties like objects do,  access the array as this. --}}
+   {{#each this}}
+    
+   <section class="card" id="new-post-form"  > 
+   <div class="card_header">
+      <h5> &nbsp; </h5> 
+   </div> 
+   <div class="card_body"><br>
+      {{comment_text}}  
+      <br><br>
+      <em>- {{mod14user.username}}, {{format_date created_at}} </em>
+   </div>
+</section>
+
+  {{/each}}
+</div>

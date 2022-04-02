@@ -6,8 +6,8 @@
    --light-dark: rgb(3, 113, 160);  
    --dark:  rgb(4, 90, 139);  
    --superdark:  rgb(4, 80, 129);  
-   --gray_tone_light: #adcddd;
-   --gray_tone_medium: rgb(60,92,108);
+   --gray_tone_light: rgb(161, 209, 230) ; /*#b0d5e8;*/
+   --gray_tone_medium: rgb(71, 107, 125);
    --weather_light: rgb(210, 232, 243);  
    --weather_card: rgb(36, 122, 160);  
    --border-radius: .3rem;
@@ -20,7 +20,7 @@
  }
  
  body {
-   /* background: linear-gradient(var(--dark), var(--weather_light)); */
+  background: linear-gradient(var(--essential), var(--));
    background-color: var(--weather_light);  
    margin: 0;
    padding: 0;
@@ -246,7 +246,7 @@
    border-radius: var(--border-radius);
    /* border: 2px solid var(--essential); */
    border: 2px solid var(--secondary);
-   padding: 3px 0; /* distance between top border and header*/
+   padding: 2px 0; /* distance between top border and header*/
  }
  
  .card_header {
@@ -254,9 +254,9 @@
    justify-content:space-between;
    color: var(--superdark);
    background-color: var(--secondary);
-   padding: 0.6% 1.1% ;
+   padding: 0.5% 1.1% ;
    font-size: 1.1rem;
-   margin: 0 0 6px 0; 
+   margin: 0 0 3px 0; 
    /* border-radius: calc(.18rem - 1px) calc(.18rem - 1px) 0 0; */
  }
  
@@ -280,6 +280,7 @@
  .card_body {
    padding: 0.5% 0.7% 1.2% 0.7%; 
    font-size: 1.0rem;
+   background: linear-gradient(var(--gray_tone_light), var(--weather_light));
  }
  
  .card_body a { 
@@ -287,6 +288,7 @@
    font-weight: 600;
    text-decoration: none;
    margin: 15px 0 10px 8px !important;
+   
  }
  
  .card_body a:hover { 
