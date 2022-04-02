@@ -8,8 +8,8 @@
    --superdark:  rgb(4, 80, 129);  
    --gray_tone_light: rgb(161, 209, 230) ; /*#b0d5e8;*/
    --gray_tone_medium: rgb(71, 107, 125);
-   --weather_light: rgb(210, 232, 243);  
-   --weather_card: rgb(36, 122, 160);  
+   --weather_light: rgb(220, 242, 253);  
+   
    --border-radius: .3rem;
    --lucida_input_output_font: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode' ;
    
@@ -152,9 +152,9 @@
    margin: 7px 0 0 40px;
    color: var(--primary);
    line-height: 1.05;
-   font-size: 0.8rem;
+   font-size: 0.9rem;
    display: inline-block;
-   text-shadow: 1px 1px 1px var(--tertiary);
+   /* text-shadow: 1px 1px 1px var(--tertiary); */
   }
  
  main {
@@ -370,7 +370,7 @@
    background-color: transparent;
    color: var(--superdark);
    text-align: left;
-   /* font-size: 0.9rem; */
+   font-size: 1.1rem;
    
    overflow-y: auto;
    border-top: 2px solid var(--essential);
