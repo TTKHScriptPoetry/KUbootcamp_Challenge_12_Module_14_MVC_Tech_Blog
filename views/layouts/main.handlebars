@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="/stylesheets/handlebars.css" />
+  <title>The Tech Blog - KU Coding Bootcamp HKT 2022</title>
+</head>
+
+<body class="flex_column min_100_vh">
+  <div class="herolift">
+    <nav>
+      <a href="/">Home</a>
+      <a href="/dashboard" onclick="changeAppTitle()">Dashboard</a>
+      {{#if loggedIn}}
+      <button id="logout" class="btn-no-style">Logout</button>
+      {{else}}
+      <a href="/login">Login</a>
+      {{/if}}
+    </nav>
+  </div>
+  <header class="hero"  >
+    <h1 class="app_title" id="app_title"></h1>
+  </header>
+  <main class="flex-row justify_space_between">
+    <!-- Start of Left Panel -->
+    <div class="col-12 col-md-12">
+      {{{ body }}} 
+    </div>
+     
+  </main>  
+  {{#if loggedIn}} 
+    <script src="/javascript/logout.js"></script>
+  {{else}}
+    <script src="/javascript/login.js"></script>
+  {{/if}}
+  <footer>
+    &copy; 2022 The Tech Blog
+  </footer>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.15.0/umd/popper.min.js"></script>
+  <!-- jQuery UI is loaded after the core jQuery library -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+  </body>
+  <script>
+    var url = window.location.toString().toLocaleLowerCase();
+    title = document.getElementById("app_title");
+    if (url.includes("dashboard")){
+      title.innerHTML = "Your Dashboard";
+    }
+    else{
+      title.innerHTML = "The Tech Blog";
+    }
+  </script>
+  
+</html>
